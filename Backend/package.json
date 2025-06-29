@@ -1,0 +1,30 @@
+{
+  "name": "t5-backend",
+  "version": "1.0.0",
+  "description": "Backend com Express, Prisma e TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/server.ts",
+    "seed": "ts-node prisma/seed.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^20.12.7",
+    "prisma": "^6.10.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.4.5"
+  }
+}
