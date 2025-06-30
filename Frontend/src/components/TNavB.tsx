@@ -6,35 +6,42 @@ export default function Navbar() {
       background: '#6200ea',
       padding: '1rem',
       width: '100%',
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
     }}>
-      <ul style={{
+      <ul className="nav-list" style={{
         display: 'flex',
+        flexWrap: 'wrap', // permite quebrar linha
         gap: '1rem',
         listStyle: 'none',
         margin: 0,
         padding: 0,
+        justifyContent: 'center', // centraliza os itens
       }}>
-        <li>
-          <Link to="/clientes" style={{ color: 'white', textDecoration: 'none' }}>Clientes</Link>
-        </li>
-        <li>
-          <Link to="/produtos" style={{ color: 'white', textDecoration: 'none' }}>Produtos</Link>
-        </li>
-        <li>
-          <Link to="/servicos" style={{ color: 'white', textDecoration: 'none' }}>
-            Serviços
-          </Link>
-        </li>
-          <li>
-          <Link to="/listagens" style={{ color: 'white', textDecoration: 'none' }}>
-            Listagens
-          </Link>
-        </li>
-        <li>
-          <Link to="/cadastrar" style={{ color: 'white', textDecoration: 'none' }}>Cadastrar</Link>
-        </li>
+        <li><Link to="/clientes" className="nav-link">Clientes</Link></li>
+        <li><Link to="/produtos" className="nav-link">Produtos</Link></li>
+        <li><Link to="/servicos" className="nav-link">Serviços</Link></li>
+        <li><Link to="/listagens" className="nav-link">Listagens</Link></li>
+        <li><Link to="/cadastrar" className="nav-link">Cadastrar</Link></li>
       </ul>
+
+      {/* Estilos responsivos */}
+      <style>{`
+        .nav-link {
+          color: white;
+          text-decoration: none;
+          font-size: 1rem;
+        }
+
+        @media (max-width: 600px) {
+          .nav-link {
+            font-size: 0.8rem;
+          }
+          .nav-list {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      `}</style>
     </nav>
   );
 }
